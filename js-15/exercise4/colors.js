@@ -16,3 +16,27 @@ rgba(127, 31, 85, 1)
 rgba(93, 18, 199, 1)
 rgba(93, 18, 199, 1)
 */
+const colors = [
+    "rgb(31, 127, 102, 1)",
+    "rgb(255, 200, 0, 1)",
+    "rgb(255, 123, 0, 1)",
+    "rgb(216, 1, 1, 1)",
+    "rgb(223, 4, 70, 1)",
+    "rgb(127, 31, 85, 1)",
+    "rgb(93, 18, 199, 1)",
+  ];
+  
+  const circles = document.querySelectorAll(".circle");
+  const rectangles = document.querySelectorAll(".rectangle");
+  
+  for (let i = 0; i < 7; i++) {
+    circles[i].style.backgroundColor = colors[i];
+    circles[i].addEventListener("click", () => {
+      rectangles[0].style.backgroundColor = colors[i];
+      for (let j = 1; j < 5; j++) {
+        rectangles[j].style.backgroundColor = colors[i];
+        rectangles[j].style.opacity = 1 - j * 0.2;
+      }
+    });
+  }
+  
